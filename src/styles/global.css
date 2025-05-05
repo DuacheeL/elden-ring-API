@@ -1,23 +1,86 @@
 /* Normalize CSS */
 
+/* Font - Fontshare */
+@import url('https://api.fontshare.com/v2/css?f[]=aktura@400&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=panchang@400,500,600,700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400&display=swap');
+
+body {
+    background: linear-gradient(to right, hsl(9deg 43% 12%), hsl(216deg 71% 8%));
+
+
+}
+
 /* Header */
-.masthead {
+/* .masthead {
     text-align: center;
     border-bottom: 1px solid hsl(0, 0%, 90%);
+    color: white;
+    font-family: 'Aktura', serif;
+} */
+
+.site-title {
+    text-align: center;
+    color: hsl(35deg 91 78);
+    font-family: 'Aktura', serif;
+    font-size: 10em;
+    text-shadow:   /* larger white glow */
+             0 0 50px hsl(35deg 91 78),
+             0 0 5px hsl(35deg 91 85);
+    margin-bottom: 0;
+}
+
+
+.site-description {
+    text-align: center;
+    border-bottom: 1px solid hsl(35deg 91 78);
+   color: white;
+    font-family: 'Panchang', sans-serif;
+    padding-bottom: 2em;
 }
 
 /* Header */
 img {
-    display: block;
+    /* display: block;
     border: 0;
     width: 100%;
+    height: auto; */
+
+    width: 100%;
     height: auto;
+    object-fit: contain;
+    max-height: 100%;
+    backface-visibility: hidden;
+
+    
   }
     
 .cards {
-margin: 0;
+display: flex;
+justify-content: center;
+align-items: center;
 padding: 0;
 list-style-type: none;
+display: grid;
+gap: 10rem; 
+padding: 0;
+margin: 0;
+
+}
+
+.card-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 300px;
+    margin-top: 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px hsl(35deg 91 78);
+
+    transition: transform 0.6s ease, box-shadow 0.3s ease;
+    
 }
 
 .cards a {
@@ -28,21 +91,34 @@ text-decoration: none;
 
 .caption {
 padding: 1em;
-background: hsla(246, 40%, 30%, 0.6);
+background: transparent;
 color: white;
 font-size: 1.2em;
 transition: all 0.4s;
+transform: rotateX(180deg);
 }
 
 a:focus .caption,
 a:hover .caption {
-background: hsla(246, 40%, 30%, 1);
+  background: linear-gradient(
+    to bottom, 
+    hsla(35deg, 85%, 54%, 0.85), 
+    hsla(214deg, 67%, 25%, 0.85)
+  );
+  transform: scale(1.03);
 }
+
+
 
 .caption-title {
 margin: 0;
 font-size: 1.4em;
 line-height: 1.1em;
+font-family: 'Panchang', sans-serif;
+}
+
+p {
+    font-family: 'Cabinet Grotesk', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -81,13 +157,15 @@ CSS Grid layout for wider screens, when browser supports grid:
 
 a:focus .caption,
 a:hover .caption {
-    background: hsla(246, 40%, 30%, 0.6);
+    background: hsla(35deg 91 78, 0.6);
     opacity: 1;
 }
 }
 
 @media screen and (min-width: 60em) {
 .cards {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5em;
+    margin: 0 30px 0 30px;
 }
 }

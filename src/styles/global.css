@@ -13,7 +13,8 @@ body {
 
 .site-title {
     text-align: center;
-    color: hsl(35deg 91 78);
+    color: hsl(0deg, 0%, 100%);
+
     font-family: 'Aktura', serif;
     font-size: 10em;
     text-shadow:   /* larger white glow */
@@ -31,6 +32,7 @@ body {
    color: white;
     font-family: 'Panchang', sans-serif;
     padding-bottom: 2em;
+    margin-bottom: 2em;
 }
 
 
@@ -58,7 +60,9 @@ body {
     margin-top: 30px;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 20px hsl(35deg 91 78);
+    box-shadow: 0 0 30px hsl(35deg 91 78);
+  
+
     transition: transform 0.6s ease, box-shadow 0.3s ease;
     
 }
@@ -69,8 +73,8 @@ body {
     height: 100%;
     object-fit: fill;
     flex-shrink: 0;
-    transform: scale(1.1);
-    transition: 1s ease;
+    transform: scale(1.35);
+    transition: transform 0.35s ease; 
 }
     
 .cards a {
@@ -115,7 +119,7 @@ a:hover .caption {
       hsl(21deg, 73%, 62%)
     );
     background-size: 600% 600%; 
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   
   .card-item:hover {
@@ -131,6 +135,9 @@ a:hover .caption {
     }
   }
   
+  .card-item:hover img {
+    transform: scale(1.1);
+  }
 
 .caption-title {
 margin: 0;
